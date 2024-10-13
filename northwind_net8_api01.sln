@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "northwind_net8_api01", "northwind_net8_api01\northwind_net8_api01.csproj", "{EFBD488E-D7CE-41D3-A670-64A46E8B5190}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFBD488E-D7CE-41D3-A670-64A46E8B5190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBD488E-D7CE-41D3-A670-64A46E8B5190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBD488E-D7CE-41D3-A670-64A46E8B5190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBD488E-D7CE-41D3-A670-64A46E8B5190}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E418A9F2-2DDB-45D1-929C-93C75AC6D7AB}
+	EndGlobalSection
+EndGlobal
