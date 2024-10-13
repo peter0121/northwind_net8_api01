@@ -17,6 +17,7 @@ namespace northwind_net8_api01.Controllers
         [Route("test")]
         public IActionResult Get()
         {
+            _logger.LogInformation("call success");
             return Ok("success");
         }
     }
