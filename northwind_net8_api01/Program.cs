@@ -20,6 +20,7 @@ namespace northwind_net8_api01
                 // Add services to the container.
                 // Add SQL
                 builder.Services.AddSingleton<MSSQLConnectionFactory>();
+                builder.Services.AddSingleton<INorthwind,NorthwindDAL>();
 
                 builder.Services.AddControllers();
 
