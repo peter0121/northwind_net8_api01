@@ -35,6 +35,8 @@ namespace northwind_net8_api01.Controllers
         {
             var SourceIP = HttpContext.Connection.RemoteIpAddress;
 
+            _logger.LogTrace($"GetOrders,{SourceIP},{pageNumber},{pageSize}");
+
             if (pageNumber <= 0 || pageSize <= 0)
             {
                 return BadRequest("{}");
@@ -47,11 +49,12 @@ namespace northwind_net8_api01.Controllers
                 .Handle<SqlException>(
                     ex => SqlServerTransientExceptionDetector.ShouldRetryOn(ex))
                 .Or<TimeoutException>()
-                .WaitAndRetry(2, retryAttempt => {
+                .WaitAndRetry(2, retryAttempt =>
+                {
                     // Adjust the retry interval as you see fit
                     Random jitterer = new Random();
                     return TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)) + TimeSpan.FromMilliseconds(jitterer.Next(0, 1000));
-                    }
+                }
                 )
                 .Execute(() =>
                 {
