@@ -65,5 +65,17 @@ namespace northwind_net8_api01.DAL
 
             return paginationResult;
         }
+
+        // 獲取單一訂單
+        public OrderModel GetOrderById(int orderId)
+        {
+            using (var connection = _MsSQLConnectionFactory.CreateConn())
+            {
+                string sql = @"SELECT [OrderID],[CustomerID],[EmployeeID],[OrderDate],[RequiredDate],[ShippedDate],[ShipVia],[Freight],
+                            [ShipName],[ShipAddress],[ShipCity],[ShipRegion],[ShipPostalCode],[ShipCountry] FROM " 
+                            + _table_name_orders +" WHERE OrderID = @OrderID";
+                return connection.QueryFirstOrDefault<OrderModel>(sql, new { OrderID = orderId });
+            }
+        }
     }
 }

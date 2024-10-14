@@ -5,5 +5,6 @@ namespace northwind_net8_api01.DAL
     public interface INorthwind
     {
         public PagiOrderListModel GetOrderList(int pageNumber = 1, int pageSize = 10);
+        public OrderModel GetOrderById(int orderId);
     }
 }

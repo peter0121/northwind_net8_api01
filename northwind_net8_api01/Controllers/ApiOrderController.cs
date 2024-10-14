@@ -75,5 +75,48 @@ namespace northwind_net8_api01.Controllers
                 return BadRequest("{}");
             }
         }
+
+        // 獲取單一訂單
+        [HttpGet("{id}")]
+        public ActionResult<OrderModel> GetOrderById(int id)
+        {
+            var SourceIP = HttpContext.Connection.RemoteIpAddress;
+
+            _logger.LogTrace($"GetOrderById,{SourceIP},{id}");
+
+            try
+            {
+                OrderModel result = null;
+                Policy
+                .Handle<SqlException>(
+                    ex => SqlServerTransientExceptionDetector.ShouldRetryOn(ex))
+                .Or<TimeoutException>()
+                .WaitAndRetry(2, retryAttempt =>
+                {
+                    // Adjust the retry interval as you see fit
+                    Random jitterer = new Random();
+                    return TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)) + TimeSpan.FromMilliseconds(jitterer.Next(0, 1000));
+                }
+                )
+                .Execute(() =>
+                {
+                    result = _northwind.GetOrderById(id);
+
+                });
+
+                if (result == null)
+                {
+                    return NotFound("{}");
+                }
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"GetOrderById, Error,'{SourceIP}' ,{ex.ToString()}");
+
+                return BadRequest("{}");
+            }
+        }
+
     }
 }
