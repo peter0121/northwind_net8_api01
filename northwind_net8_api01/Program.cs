@@ -1,5 +1,7 @@
 using NLog;
 using NLog.Web;
+using northwind_net8_api01.DAL;
+using northwind_net8_api01.MsSQL;
 
 namespace northwind_net8_api01
 {
@@ -16,6 +18,8 @@ namespace northwind_net8_api01
                 var builder = WebApplication.CreateBuilder(args);
 
                 // Add services to the container.
+                // Add SQL
+                builder.Services.AddSingleton<MSSQLConnectionFactory>();
 
                 builder.Services.AddControllers();
 
