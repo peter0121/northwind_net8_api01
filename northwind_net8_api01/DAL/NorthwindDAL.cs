@@ -39,6 +39,7 @@ namespace northwind_net8_api01.DAL
 
                 var offset = (pageNumber - 1) * pageSize;
 
+                //用QueryMultiple 減少連線開銷
                 using (var multi = connection.QueryMultiple(query, new { Offset = offset, PageSize = pageSize }))
                 {
                     var orders = multi.Read<OrderModel>().ToList();
@@ -54,10 +55,7 @@ namespace northwind_net8_api01.DAL
                         totalpages = totalPages,
                         orders = orders
                     };
-
-                    //return Ok(paginationResult);
                 }
-
             }
 
             if (paginationResult == null)
