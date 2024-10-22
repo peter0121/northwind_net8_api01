@@ -78,7 +78,7 @@ namespace northwind_net8_api01.Controllers
 
         // 獲取單一訂單
         [HttpGet("{id}")]
-        public ActionResult<OrderModel> GetOrderById(int id)
+        public IActionResult GetOrderById(int id)
         {
             var SourceIP = HttpContext.Connection.RemoteIpAddress;
 
