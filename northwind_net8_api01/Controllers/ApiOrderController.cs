@@ -12,12 +12,12 @@ namespace northwind_net8_api01.Controllers
     [Route("v1/order")]
     public class ApiOrderController : ControllerBase
     {
-        private readonly ILogger<ApiVer1Controller> _logger;
+        private readonly ILogger<ApiOrderController> _logger;
         private INorthwind _northwind;
         private Stopwatch _sw = new Stopwatch();
         private Dictionary<string, string> _result = new Dictionary<string, string>();
 
-        public ApiOrderController(ILogger<ApiVer1Controller> logger, INorthwind northwind)
+        public ApiOrderController(ILogger<ApiOrderController> logger, INorthwind northwind)
         {
             _logger = logger;
             _northwind = northwind;
