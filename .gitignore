@@ -1,3 +1,5 @@
 /.vs
 /northwind_net8_api01/bin
 /northwind_net8_api01/obj
+/northwind_net8_api01.test/bin
+/northwind_net8_api01.test/obj

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "northwind_net8_api01", "northwind_net8_api01\northwind_net8_api01.csproj", "{EFBD488E-D7CE-41D3-A670-64A46E8B5190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "northwind_net8_api01", "northwind_net8_api01\northwind_net8_api01.csproj", "{EFBD488E-D7CE-41D3-A670-64A46E8B5190}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "northwind_net8_api01.test", "northwind_net8_api01.test\northwind_net8_api01.test.csproj", "{550A966E-7912-4579-BA31-CD0631E9FAF4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EFBD488E-D7CE-41D3-A670-64A46E8B5190}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFBD488E-D7CE-41D3-A670-64A46E8B5190}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFBD488E-D7CE-41D3-A670-64A46E8B5190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{550A966E-7912-4579-BA31-CD0631E9FAF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{550A966E-7912-4579-BA31-CD0631E9FAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{550A966E-7912-4579-BA31-CD0631E9FAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{550A966E-7912-4579-BA31-CD0631E9FAF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
